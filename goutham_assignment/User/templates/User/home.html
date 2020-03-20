@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h1>How you doin?</h1>
+    <p> Register here-<a href="{% url 'register' %}">Register</a></p>
+    {% if user.is_authenticated %}
+        <p>LogOut here-<a href="{% url 'logout' %}">LogOut</a></p>
+    {% else %}
+        <p>LogIn here-<a href="{% url 'login' %}">LogIn</a></p>
+    {% endif %}
+    <p>Create a Post-<a href="{% url 'post-new' %}">Create post</a></p>
+</body>
+</html>
